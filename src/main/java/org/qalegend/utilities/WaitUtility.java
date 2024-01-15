@@ -1,4 +1,4 @@
-package org.qalegend.utilitites;
+package org.qalegend.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;

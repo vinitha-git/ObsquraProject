@@ -1,5 +1,6 @@
 package org.qalegend.automationcore;
 
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -7,14 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.qalegend.utilitites.WebDriverUtility;
+import org.qalegend.utilities.WebDriverUtility;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-
 import java.io.File;
 import java.io.IOException;
+
 
 public class Base {
     public WebDriver driver;
@@ -33,9 +33,9 @@ public class Base {
         driver.manage().deleteAllCookies();
     }
     @BeforeMethod(alwaysRun = true)
-    public void setup(String browserName) {
-        initializeBrowser(browserName);
-        WebDriverUtility.loadURL(driver, "https://qalegend.com/billing/public/login");
+    public void setup() {
+        initializeBrowser("Chrome");
+        WebDriverUtility.loadURL(driver,"https://qalegend.com/billing/public/login");
     }
 
     @AfterMethod(alwaysRun = true)
@@ -51,5 +51,4 @@ public class Base {
         FileUtils.copyFile(screenshot,new File("./Screenshots/"+result.getName()+".png"));
 
     }
-
 }

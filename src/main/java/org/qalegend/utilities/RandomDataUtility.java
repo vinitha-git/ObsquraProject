@@ -1,4 +1,4 @@
-package org.qalegend.utilitites;
+package org.qalegend.utilities;
 
 import com.github.javafaker.Faker;
 
