@@ -28,6 +28,8 @@ public class LoginPage {
 
     @FindBy(xpath = "//a[@class='btn btn-link']")
     WebElement forgotPassWordMenu;
+    @FindBy(xpath="//button[@class='btn btn-default btn-sm']")
+    WebElement endTourButtonField;
 
     public String getPageTitle() {
         return driver.getTitle();
@@ -53,6 +55,10 @@ public class LoginPage {
     public String getText() {
         String errorMessageText = WebElementUtility.getTextFromElement(errorMessageField);
         return errorMessageText;
+    }
+    public HomePage clickOnEndTourButton() {
+        WebElementUtility.clickOnElement(endTourButtonField);
+        return new HomePage(driver);
     }
 
 

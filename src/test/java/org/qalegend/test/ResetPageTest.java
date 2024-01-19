@@ -34,7 +34,7 @@ public class ResetPageTest extends Base {
         reset.clickOnSendPassWordRestLink();
         String actualErrorMessage= reset.getText();
         String expectedErrorMessage= data.get(3);
-        Assert.assertEquals(actualErrorMessage,expectedErrorMessage,Messages.PASSWORD_RESET_LINK_SEND_SUCCESSFULLY);
+        Assert.assertEquals(actualErrorMessage,expectedErrorMessage,Messages.WRONG_USER_EMAIL);
     }
 
 }

@@ -40,12 +40,16 @@ public class HomePage {
         String loginDate=WebElementUtility.getTextFromElement(loginDateElement);
         return loginDate;
     }
-    public void clickOnUserManagement() {
+
+    public UserManagementPage clickOnUserManagement() {
         WebElementUtility.clickOnElement(userManagementOptionField);
+        return new UserManagementPage(driver);
     }
     public UsersPage clickOnUsersOption() {
         WebElementUtility.clickOnElement(usersOptionField);
         return new UsersPage(driver);
     }
+    ;
+
 
 }
