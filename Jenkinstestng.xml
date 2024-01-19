@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Test Suite">
+        <listeners>
+            <listener class-name="org.qalegend.listeners.AnnotationTransformer"/>
+            <listener class-name="org.qalegend.listeners.ExtentListener">
+            </listener>
+        </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/VINITHA EDWIN/IdeaProjects/org.qalegend">
+        <classes>
+              <class name="org.qalegend.test.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                    <include name="verifyUserLoginDate"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
