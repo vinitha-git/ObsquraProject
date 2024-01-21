@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <test name="Add Users Page Test">
+        <classes>
+            <class name="org.qalegend.test.AddUsersPageTest"/>
+        </classes>
+    </test>
+    <test name="Home Page Test">
+        <classes>
+            <class name="org.qalegend.test.HomePageTest"/>
+        </classes>
+    </test>
+    <test name="Login Page Test">
+        <classes>
+            <class name="org.qalegend.test.LoginPageTest"/>
+        </classes>
+    </test>
+    <test name="Reset Page Test">
+        <classes>
+            <class name="org.qalegend.test.ResetPageTest"/>
+        </classes>
+    </test>
+    <test name="User Management Page Test">
+        <classes>
+            <class name="org.qalegend.test.UserManagementPageTest"/>
+        </classes>
+    </test>
+</suite>

@@ -6,13 +6,9 @@
             <listener class-name="org.qalegend.listeners.ExtentListener">
             </listener>
         </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/VINITHA EDWIN/IdeaProjects/org.qalegend">
+    <test  name="Functional Test">
         <classes>
               <class name="org.qalegend.test.HomePageTest">
-                <methods>
-                    <include name="verifyHomePageTitle"/>
-                    <include name="verifyUserLoginDate"/>
-                </methods>
             </class>
 
         </classes>

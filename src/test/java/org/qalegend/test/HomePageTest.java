@@ -5,6 +5,7 @@ import org.qalegend.constants.Constants;
 import org.qalegend.constants.Messages;
 import org.qalegend.page.HomePage;
 import org.qalegend.page.LoginPage;
+import org.qalegend.retryanalyzer.RetryAnalyzer;
 import org.qalegend.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,10 +18,10 @@ import java.util.Date;
 import static org.qalegend.utilities.ExcelUtility.readData;
 
 public class HomePageTest extends Base {
-    @Test
+    @Test(groups = "Sanity")
     public void verifyHomePageTitle() {
         LoginPage login=new LoginPage(driver);
-        ArrayList<String> data= ExcelUtility.readData(Constants.TEST_DATA_EXCEL_PATH,Constants.HOME_PAGE);
+        ArrayList<String> data=ExcelUtility.readData(Constants.TEST_DATA_EXCEL_PATH,Constants.HOME_PAGE);
         String userName= data.get(2);
         login.enterUserName(userName);
         String passWord= data.get(3);
@@ -30,7 +31,7 @@ public class HomePageTest extends Base {
         String expectedHomePageTitle= data.get(1);
         Assert.assertEquals(actualHomePageTitle,expectedHomePageTitle,Messages.TITLE_MISMATCH);
     }
-    @Test
+    @Test(groups = "Regression")
     public void verifyUserLoginDate() {
         LoginPage login=new LoginPage(driver);
         ArrayList<String> data=readData(Constants.TEST_DATA_EXCEL_PATH,Constants.LOGIN_PAGE);
@@ -39,11 +40,9 @@ public class HomePageTest extends Base {
         String password=data.get(2);
         login.enterPassWord(password);
         HomePage home=login.clickOnLoginButtonElement();
+        login.clickOnEndTourButton();
         String actualLoginDate= home.getLoginDate();
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date currentDate = new Date();
-        String expectedLoginDate = dateFormat.format(currentDate);
+        String expectedLoginDate=home.getCurrentDate();
         Assert.assertEquals(actualLoginDate,expectedLoginDate,Messages.LOGIN_DATE_VERIFICATION_FAILED);
     }
-
 }

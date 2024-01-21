@@ -8,7 +8,6 @@ import org.qalegend.utilities.WebElementUtility;
 
 public class ResetPage {
     WebDriver driver;
-
     public ResetPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -16,7 +15,7 @@ public class ResetPage {
     @FindBy(xpath="//button[@type='submit']")
     WebElement sendPassWordResetLinkButton;
 
-    @FindBy(xpath = "/html/body/div[3]/div/div/div/div[2]/form/div[1]/div/span/strong")
+    @FindBy(xpath = "//span[@class='help-block']//strong[starts-with(text(),'We can')]")
     WebElement resetPassWordErrorMessageField;
 
     @FindBy(id = "email")

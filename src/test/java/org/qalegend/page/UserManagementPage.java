@@ -10,15 +10,12 @@ import java.util.List;
 
 public class UserManagementPage {
     WebDriver driver;
-
     public UserManagementPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public String getPageTitle(){
-        return driver.getTitle();
-    }
+
     @FindBy(xpath="//input[@type='search']")
     WebElement searchField;
 
@@ -29,5 +26,4 @@ public class UserManagementPage {
     public List<String> getUserManagementOptions() {
         return AppUtility.getMenuOption(userManagementMenuOptions);
     }
-
 }
