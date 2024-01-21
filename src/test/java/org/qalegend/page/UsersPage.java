@@ -15,7 +15,6 @@ public class UsersPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     @FindBy(xpath = "//a[@class='btn btn-block btn-primary']")
     WebElement addButtonField;
 
@@ -24,6 +23,15 @@ public class UsersPage {
 
     @FindBy(xpath = "//table//tr//td[4][contains(text(), 'shifana123@gmail.com')]")
     WebElement actualMailIdOfNewlyAddedUser;
+
+    @FindBy(xpath="//a[@class='dropdown-toggle']//span[text()='admin KL']")
+    WebElement usersLoggedUserName;
+
+    @FindBy(xpath = "//div[@class='pull-right']//a[@class='btn btn-default btn-flat']")
+    WebElement signOutButton;
+
+    @FindBy(xpath="//table//tr[1]/td[4]")
+    WebElement loggedUsersEmailID;
 
     public AddUsersPage clickOnAddButton() {
         WebElementUtility.clickOnElement(addButtonField);
@@ -43,5 +51,15 @@ public class UsersPage {
     public String getTextOfMailID() {
         String emailText=WebElementUtility.getTextFromElement(actualMailIdOfNewlyAddedUser);
         return emailText;
+    }
+    public  void clickOnUsersLoggedUserName() {
+        WebElementUtility.clickOnElement(usersLoggedUserName);
+    }
+    public LoginPage clickOnSignOutButton(){
+        WebElementUtility.clickOnElement(signOutButton);
+        return new LoginPage(driver);
+    }
+    public String getTextFromLoggedUsersMailID() {
+        return WebElementUtility.getTextFromElement(loggedUsersEmailID);
     }
 }

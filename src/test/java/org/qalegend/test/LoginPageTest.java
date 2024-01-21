@@ -40,7 +40,7 @@ public class LoginPageTest extends Base {
         String expectedLoggedAccount= data.get(6);
         Assert.assertEquals(actualLoggedAccount,expectedLoggedAccount,Messages.LOGIN_FAILED);
     }
-    @Test(groups="Smoke")
+    @Test(groups="Smoke",dataProvider = "verifyInvalidLoginCredentials",dataProviderClass = DataProviders.class)
     public void verifyErrorMessageWhileLoginWithInvalidCredentials(String userName,String passWord) {
         LoginPage login=new LoginPage(driver);
         login.enterUserName(userName);

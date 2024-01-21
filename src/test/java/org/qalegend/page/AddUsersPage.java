@@ -46,9 +46,6 @@ public class AddUsersPage {
     @FindBy(id="submit_user_button")
     WebElement saveButtonField;
 
-
-
-
     public String getTitle() {
         return driver.getTitle();
     }

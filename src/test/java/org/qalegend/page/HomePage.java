@@ -34,7 +34,8 @@ public class HomePage {
     @FindBy(xpath="//h1[contains(text(), 'Welcome Shifana')]")
     WebElement registeredUserNameText;
 
-
+    @FindBy(xpath="//a[@class='dropdown-toggle']//span[text()='Shifana S']")
+    WebElement newlyAddedUsersUserName;
     public String getTitle() {
         return driver.getTitle();
     }
@@ -69,9 +70,9 @@ public class HomePage {
         String currentDate= DateUtility.getCurrentDateFormatted("dd-MM-yyyy");
         return currentDate;
     }
-    public String getTextFromLoggedUserName() {
-        return WebElementUtility.getTextFromElement(registeredUserNameText);
-    }
 
+    public String getTextNewlyAddedUserName() {
+        return WebElementUtility.getTextFromElement(newlyAddedUsersUserName);
+    }
 
 }
