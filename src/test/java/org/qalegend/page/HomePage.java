@@ -21,7 +21,7 @@ public class HomePage {
     }
     @FindBy(xpath = "//a[@class='dropdown-toggle']//span[text()='admin KL']")
     WebElement userLoggedAccount;
-    @FindBy(xpath = "//div[@class='m-8 pull-left mt-15 hidden-xs']/strong[text()='19-01-2024']")
+    @FindBy(xpath = "//div[@class='m-8 pull-left mt-15 hidden-xs']//strong")
     WebElement loginDateElement;
 
     @FindBy(xpath = "//span[contains(text(),'User Management')]")
